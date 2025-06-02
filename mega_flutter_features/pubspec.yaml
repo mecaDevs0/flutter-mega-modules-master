@@ -1,0 +1,48 @@
+name: mega_flutter_features
+description: A new Flutter package.
+version: 0.0.1
+homepage: megaleios
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  bloc_pattern: ^3.0.1
+  dio: ^4.0.6
+  flutter_modular: ^5.0.3
+  rxdart: ^0.27.7
+  crypto: ^3.0.2
+  local_auth: ^2.1.3
+
+  mega_flutter_base:
+    path: ../mega_flutter_base
+
+  mega_flutter_components:
+    path: ../mega_flutter_components
+
+  mega_flutter_network:
+    path: ../mega_flutter_network
+
+  mega_flutter_services:
+    path: ../mega_flutter_services
+
+  megaleios_flutter_localization:
+    path: ../megaleios_flutter_localization
+  sign_in_with_apple: ^6.1.4
+  flutter_secure_storage: ^7.0.1
+  flutter_statusbarcolor_ns: ^0.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  json_serializable: ^6.5.4
+  build_runner: ^2.3.2
+
+flutter:
+  uses-material-design: true

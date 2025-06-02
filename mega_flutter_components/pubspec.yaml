@@ -1,0 +1,39 @@
+name: mega_flutter_components
+description: A new Flutter package.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  brasil_fields: ^1.9.0
+  cached_network_image: ^3.2.3
+  flutter_modular: ^5.0.3
+  flutter_slidable: ^3.1.0
+  flutter_staggered_animations: ^1.1.1
+  font_awesome_flutter: ^10.3.0
+  table_calendar: ^3.0.8
+  photo_view: ^0.14.0
+
+  mega_flutter_base:
+    path: ../mega_flutter_base
+
+  mega_flutter_features:
+    path: ../mega_flutter_features
+
+  megaleios_flutter_localization:
+    path: ../megaleios_flutter_localization
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/
+
