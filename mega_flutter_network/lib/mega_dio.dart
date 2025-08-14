@@ -17,7 +17,7 @@ import 'time_interceptor.dart';
 import 'urls.dart';
 
 class MegaDio {
-  static const int _timeout = 1000 * 60 * 2;
+  static const int _timeout = 1000 * 60; // 60 segundos
   late Dio _client;
 
   MegaDio(

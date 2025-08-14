@@ -43,11 +43,23 @@ class MegaResponse extends Error {
         e.type == DioErrorType.receiveTimeout ||
         e.type == DioErrorType.sendTimeout) {
       statusCode = 408;
-      message = 'Tempo limite de conexão excedido!';
+      message = 'Tempo limite de conexão excedido! Verifique sua internet.';
     } else if (hasConnectionLost) {
       statusCode = HttpStatus.requestTimeout;
       message =
-          'Aconteceu um problema de conexão com nosso servidor, tenta novamente mais tarde.';
+          'Aconteceu um problema de conexão com nosso servidor. Verifique sua internet e tenta novamente.';
+    } else if (e.type == DioErrorType.connectionError) {
+      statusCode = HttpStatus.serviceUnavailable;
+      message = 'Erro de conexão com o servidor. Verifique sua internet.';
+    } else if (e.response?.statusCode == 502) {
+      statusCode = 502;
+      message = 'Servidor temporariamente indisponível. Tente novamente em alguns minutos.';
+    } else if (e.response?.statusCode == 503) {
+      statusCode = 503;
+      message = 'Serviço temporariamente indisponível. Tente novamente em alguns minutos.';
+    } else if (e.response?.statusCode == 504) {
+      statusCode = 504;
+      message = 'Tempo limite do servidor. Tente novamente em alguns minutos.';
     } else {
       message = '${e.message}';
       statusCode = e.response?.statusCode ?? HttpStatus.badRequest;
